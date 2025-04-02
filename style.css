@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Nothing+You+Could+Do&display=swap');
+
+@font-face {
+    font-family: ttf;
+    src: url("./font-style/Freight\ Big\ Pro\ Book.otf");
+}
+
+@font-face {
+    font-family: thh;
+    src: url('./font-style/NeueHaasDisplayThin.ttf');
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+}
+
+.main{
+    background-color: rgb(255, 255, 255);
+}
+
+.loader{
+    font-family: ttf;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.loader h1{
+    font-size: 6.9vw;
+    font-weight:100;
+    line-height: 5vw;
+    letter-spacing: -4px;
+    position: relative;
+    z-index: 9;
+}
+
+.loader video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 7;
+}
+
+.yellow1,.yellow2{
+    width: 100%;
+    height: 100%;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 8;
+}
+
+.nav{
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: red; */
+    padding: 35px 60px;
+    z-index: 11;
+}
+
+.nav .elem{
+    cursor: pointer;
+}
+
+.nav .nav-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vw;
+    text-transform: uppercase;
+    font-family: thh;
+}
+
+.nav .nav-left h4{
+    letter-spacing: 0.1vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav .nav-left .line{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: all ease 0.2s;
+}
+
+.nav .nav-left div h4:hover .line{
+    transform: scaleX(1);
+}
+
+.page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: ttf;
+}
+
+.page1 h1{
+    font-size: 6.9vw;
+    font-weight:100;
+    line-height: 5vw;
+    letter-spacing: -4px;
+    cursor: default;
+}
+
+
+.page2{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: ttf;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    transition: all ease 0.5s;
+}
+
+.element{
+    /* background-color: brown; */
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    /* background-color:black; */
+}
+
+.element h2{
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    z-index: 1;
+    line-height: 4vw;
+    transition:all ease 0.3s;
+
+}
+
+.element .moving{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%) scaleY(0);
+    background-color: #F5E41B;
+    width: 100%;
+    white-space: nowrap;
+    padding: 3px 5px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    overflow: hidden;
+}
+
+.element .moving .blur{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:linear-gradient(to right,#f5e31be0,#F5E41B,#f5e31bc8);
+    box-shadow: 10px 0px 20px 20px #F5E41B;
+    z-index: 3;
+}
+
+.element .moving .moving-in{
+    /* background-color: lightcoral; */
+    display: inline-block;
+    white-space: nowrap;
+    animation: moving 5s infinite;
+}
+
+.element .moving .moving-in h5{
+    color: black;
+    display: inline-block;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+}
+
+
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-80%);
+    }
+}
+
+.element:hover .moving{
+    transform: translate(0,-50%) scaleY(1);
+}
+.element:hover h2{
+    color: black;
+    font-style: italic;
+    transition: all ease 0.5s;
+}
+
+.page3{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1vw;
+    padding: 1.5vw;
+}
+
+.page3 .pt1,.pt2,.pt3{
+    width: 32%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.page3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease 0.2s;
+}
+.page3 .black{
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.9vw;
+    line-height: 2.3vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    opacity: 0;
+    font-family: "Nothing You Could Do", cursive;
+    font-weight: 100;
+    font-style: italic;
+    transition: all ease 0.2s;
+}
+.img-cont:hover .black{
+    opacity: 1;
+}
+.img-cont:hover img{
+    scale: 1.1;
+}
+.img-cont{
+    overflow: hidden;
+    position: relative;
+    background-color: red;
+    width: 100%;
+    height: 500px;
+}
+.img-cont2:hover .black{
+    opacity: 1;
+}
+.img-cont2:hover img{
+    scale: 1.1;
+}
+
+.img-cont2{
+    overflow: hidden;
+    position: relative;
+    background-color: red;
+    width: 100%;
+    height: 600px;
+}
+
+.img-cont3{
+    overflow: hidden;
+    position: relative;
+    background-color: red;
+    width: 100%;
+    height: 300px;
+}
+.img-cont3:hover .black{
+    opacity: 1;
+}
+.img-cont3:hover img{
+    scale: 1.1;
+}
+
+
+.page4{
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    padding: 3.3vw;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: thh;
+}
+
+.page4 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5.8vw;
+    position: relative;
+    /* margin:0 10px; */
+}
+
+.page4 div h4{
+    letter-spacing: 0.1vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.page4 div .line{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(75, 75, 75);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: all ease 0.3s;
+}
+
+.page4 div h4:hover .line{
+    transform: scaleX(1);
+}
+
